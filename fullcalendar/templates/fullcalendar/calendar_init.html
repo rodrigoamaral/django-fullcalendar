@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        // page is now ready, initialize the calendar...
+        $('#calendar').fullCalendar({
+            events: "{{ event_url }}",
+            timeFormat: "{{ time_format }}"
+        })
+    });
+</script>
