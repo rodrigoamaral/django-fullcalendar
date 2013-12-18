@@ -6,4 +6,4 @@ FullCalendar_ integration with Django. Provides a model representing a FullCalen
 
 This project is currently in pre-alpha. Use it at your own risk.
 
-.. FullCalendar_: http://arshaw.com/fullcalendar/
+.. _FullCalendar: http://arshaw.com/fullcalendar/
