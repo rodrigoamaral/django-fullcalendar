@@ -6,6 +6,8 @@ from setuptools import setup
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
+REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines()]
+
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
@@ -14,6 +16,7 @@ setup(
     packages=['fullcalendar', 'fullcalendar.templatetags',],
     include_package_data=True,
     license='MIT License',  # example license
+    install_requires=REQUIREMENTS,
     description='FullCalendar jQuery plugin integration with Django.',
     long_description=README,
     url='http://github.com/rodrigoamaral/django-fullcalendar',
