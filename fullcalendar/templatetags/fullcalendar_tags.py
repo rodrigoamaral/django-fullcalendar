@@ -1,4 +1,5 @@
 from django import template
+from django.utils.safestring import mark_safe
 from ..fullcalendar import css_url, javascript_url, jquery_url, jquery_ui_url
 
 register = template.Library()
@@ -9,8 +10,8 @@ def calendar():
     return {}
 
 @register.inclusion_tag("fullcalendar/calendar_init.html")
-def calendar_init(event_url):
-    return {'event_url': event_url, 'time_format': 'H:mm'}
+def calendar_init(calendar_config_options):
+    return {'calendar_config_options': mark_safe(calendar_config_options)}
 
 @register.simple_tag
 def fullcalendar_css_url():
