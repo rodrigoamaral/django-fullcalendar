@@ -4,10 +4,10 @@ from django.conf import settings
 # folder structure, expected to be under the STATIC_URL
 
 FULLCALENDAR_DEFAULTS = {
-    'css_url': '/fullcalendar/js/fullcalendar/fullcalendar.css',
-    'javascript_url': '/fullcalendar/js/fullcalendar/fullcalendar.js',
-    'jquery_url': '/fullcalendar/js/lib/jquery.min.js',
-    'jquery_ui_url': '/fullcalendar/js/lib/jquery-ui.custom.min.js',
+    'css_url': '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css',
+    'javascript_url': '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js',
+    'jquery_url': '//code.jquery.com/jquery-2.1.0.min.js',
+    'jquery_ui_url': '//code.jquery.com/ui/1.10.4/jquery-ui.js',
 }
 
 # Updates location based on configuration defined by 
@@ -17,13 +17,13 @@ FULLCALENDAR = FULLCALENDAR_DEFAULTS.copy()
 FULLCALENDAR.update(getattr(settings, 'FULLCALENDAR', {}))
 
 def css_url():
-    return settings.STATIC_URL + FULLCALENDAR['css_url']
+    return FULLCALENDAR['css_url']
 
 def javascript_url():
-    return settings.STATIC_URL + FULLCALENDAR['javascript_url']
+    return FULLCALENDAR['javascript_url']
 
 def jquery_url():
-    return settings.STATIC_URL + FULLCALENDAR['jquery_url']
+    return FULLCALENDAR['jquery_url']
 
 def jquery_ui_url():
-    return settings.STATIC_URL + FULLCALENDAR['jquery_ui_url']
+    return FULLCALENDAR['jquery_ui_url']
