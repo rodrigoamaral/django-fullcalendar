@@ -28,15 +28,16 @@ Add the ``fullcalendar`` module to the INSTALLED_APPS of your Django project ``s
     'fullcalendar',
   )
   
-django-fullcalendar expects the default file structure from FullCalendar_ javascript lib to be under your project ``static`` folder. If you have organized it in a different way, you must inform it in your ``settings.py``:
+django-fullcalendar now gets FullCalendar_ javascript and CSS dependency files from its respective CDNs by default. If you need to get them from a different place, you must inform it in your ``settings.py``:
 
 ::
 
   FULLCALENDAR = {
-      'css_url': <path_to_css_file>,
-      'javascript_url': <path_to_javascript_file>,
-      'jquery_url': <path_to_jquery_file>,
-      'jquery_ui_url': <path_to_jquery_ui_file>,
+      'css_url': <path_or_url_to_css_file>,
+      'print_css_url': <path_or_url_to_print_css_file>,
+      'javascript_url': <path_or_url_to_javascript_file>,
+      'jquery_url': <path_or_url_to_jquery_file>,
+      'jquery_ui_url': <path_or_url_to_jquery_ui_file>,
   }
 
 Usage
@@ -53,7 +54,10 @@ Your templates should basically look something like this:
 
       <title></title>
 
-      {% fullcalendar_css %}        
+      {% fullcalendar_css %} 
+      {% fullcalendar_print_css %} 
+      {% fullcalendar_jquery %}
+      {% fullcalendar_jquery_ui %} 
       {% fullcalendar_javascript %}
         
       {% calendar_init event_url %}
@@ -76,7 +80,7 @@ django-fullcalendar was originally developed to work with:
 
 - Python 2.7
 - Django 1.6
-- FullCalendar 
+- FullCalendar 1.6.4
 
 Bugs and requests
 -----------------
