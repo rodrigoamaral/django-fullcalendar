@@ -46,7 +46,7 @@ def events_to_json(events_queryset):
     """
     Dumps a CalendarEvent queryset to the JSON expected by FullCalendar
     """
-    events_values = list(events_queryset.values('title', 'start', 'end', 'all_day'))
+    events_values = list(events_queryset.values('id', 'title', 'start', 'end', 'all_day'))
     events_values = convert_field_names(events_values)
     return json.dumps(events_values, default=date_handler)
 
