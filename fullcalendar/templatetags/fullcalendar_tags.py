@@ -36,24 +36,24 @@ def fullcalendar_jquery_ui_url():
 @register.simple_tag
 def fullcalendar_css():
     url = fullcalendar_css_url()
-    return "<link href='%s' rel='stylesheet' />" % url
+    return mark_safe("<link href='%s' rel='stylesheet' />" % url)
 
 @register.simple_tag
 def fullcalendar_print_css():
     url = fullcalendar_print_css_url()
-    return "<link href='%s' rel='stylesheet' media='print' />" % url
+    return mark_safe("<link href='%s' rel='stylesheet' media='print' />" % url)
 
 @register.simple_tag
 def fullcalendar_jquery():
     url = fullcalendar_jquery_url()
-    return "<script src='%s'></script>" % url
+    return mark_safe("<script src='%s'></script>" % url)
 
 @register.simple_tag
 def fullcalendar_jquery_ui():
     url = fullcalendar_jquery_ui_url()
-    return "<script src='%s'></script>" % url
+    return mark_safe("<script src='%s'></script>" % url)
 
 @register.simple_tag
 def fullcalendar_javascript():
     url = fullcalendar_javascript_url()
-    return "<script src='%s'></script>" % url
+    return mark_safe("<script src='%s'></script>" % url)
