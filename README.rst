@@ -1,7 +1,8 @@
-⚠ This project is no longer being maintained and has been archived! ⚠
 ===================
 django-fullcalendar
 ===================
+
+⚠ **This project is no longer being maintained and has been archived!** ⚠
 
 FullCalendar_ integration with Django. Provides a model representing a FullCalendar Event object and some template tags to wrap the Javascript code needed to integrate FullCalendar to Django Templates.
 
